@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="BeYru799UstmUB7R6uP52f-wkJ1-xjlS_D4cScGW2h4" />
+    <title>Rameez Weather App</title>
+    <meta
+      name="description"
+      content="Check weather, humidity, and 7-day forecast easily"
+    />
+    
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="cityInput" placeholder="Enter City" />
+      <button id="getWeather"><i class="fa-solid fa-search"></i></button>
+      <button id="saveCity">Save</button>
+      <div class="weather-cards">
+        <div class="card animate">
+          <h3>
+            <i class="fa-solid fa-location-dot"></i> <br />
+            City
+          </h3>
+          <p id="city"></p>
+        </div>
+        <div class="card animate">
+          <h3>
+            🌡️ <br />
+            Temperature
+          </h3>
+          <p id="temp"></p>
+        </div>
+        <div class="card animate">
+          <h3>
+            ⛅ <br />
+            Condition
+          </h3>
+          <p id="condition"></p>
+          <p id="icon" class="weather-icon" style="font-size: 20px"></p>
+        </div>
+        <div class="card animate">
+          <h3>
+            💧 <br />
+            Humidity
+          </h3>
+          <p id="humidity"></p>
+        </div>
+        <div class="card animate">
+          <h3>
+            <i class="fa-solid fa-eye"></i> <br />
+            Visibility
+          </h3>
+          <p id="visibility"></p>
+        </div>
+        <div class="card animate">
+          <h3>
+            💨 <br />
+            Wind
+          </h3>
+          <p id="wind"></p>
+        </div>
+      </div>
+    </div>
+    <h2>Saved Cities</h2>
+    <div id="history" class="history-cards animate"></div>
+
+    <h2>5 Day Forecast</h2>
+    <div id="forecast" class="forecast-grid"></div>
+
+    <script src="weather.js"></script>
+  </body>
+</html>

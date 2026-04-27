@@ -1,0 +1,389 @@
+/* BUTTON HOVER */
+#getWeather:hover {
+  color: green;
+  border-color: green;
+}
+
+#saveCity:hover {
+  color: blue;
+  border-color: blue;
+}
+
+.dust:hover {
+  color: red;
+}
+
+.bin:hover {
+  border-color: red;
+}
+
+/* BODY */
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* CONTAINER */
+.container {
+  width: 85%;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* INPUT */
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 200px;
+  margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+  input {
+    margin-bottom: 10px;
+  }
+}
+
+/* BUTTON */
+button {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #00c6ff;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0072ff;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* WEATHER CARDS GRID */
+.weather-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  .weather-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+.card {
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* HISTORY GRID */
+.history-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  .history-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .history-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* HISTORY CARD */
+.history-card {
+  padding: 15px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* FIXED */
+  transition: transform 0.3s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.history-card span {
+  font-weight: bold;
+}
+
+.history-card button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.history-card button i {
+  color: white;
+}
+
+.history-card button i:hover {
+  color: red;
+}
+
+/* ANIMATION */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DELAY */
+/* .card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; } */
+
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease forwards;
+}
+
+/* Base Icon Style */
+.weather-icon {
+  font-size: 60px;
+  margin: 10px 0;
+  animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+/* Floating effect */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.sun {
+  color: #ffd700;
+  text-shadow: 0 0 20px #ffd700;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ffd700; }
+  to { text-shadow: 0 0 25px #ffd700; }
+}
+
+.clouds {
+  color: #ffffff;
+  opacity: 0.9;
+  animation: drift 4s infinite ease-in-out;
+}
+
+@keyframes drift {
+  0% { transform: translateX(0px); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0px); }
+}
+
+.rain {
+  color: #00c6ff;
+  animation: shake 0.6s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+.mist {
+  color: #cccccc;
+  opacity: 0.6;
+  animation: fadeMist 2s infinite alternate;
+}
+
+@keyframes fadeMist {
+  from { opacity: 0.4; }
+  to { opacity: 0.8; }
+}
+
+.haze {
+  color: #d9d9d9;
+  opacity: 0.7;
+  animation: hazeMove 2.5s infinite ease-in-out;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+@keyframes hazeMove {
+  0% { transform: translateX(0px); opacity: 0.5; }
+  50% { transform: translateX(5px); opacity: 0.8; }
+  100% { transform: translateX(0px); opacity: 0.5; }
+}
+
+/* 🌟 HORIZONTAL SCROLL FORECAST */
+#forecast {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px;
+  width: 90%;
+  margin: 20px auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar (clean UI) */
+#forecast::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🌤️ CARD STYLE */
+.forecast-card {
+  min-width: 120px;
+  padding: 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  text-align: center;
+  flex-shrink: 0;
+   scroll-snap-align: center;
+  transition: all 0.3s ease;
+}
+
+/* ✨ HOVER EFFECT */
+.forecast-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* 🌞 ICON ANIMATIONS */
+.sun {
+  color: #FFD700;
+  animation: spin 6s linear infinite;
+}
+
+.rain {
+  color: #74b9ff;
+  animation: drift 1s infinite;
+}
+
+.mist, .haze {
+  color: #b2bec3;
+}
+
+/* Animations */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes rainDrop {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+/* 🌞 SUNNY */
+.sunny-bg {
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+}
+
+/* ☁️ CLOUDY */
+.cloudy-bg {
+  background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+}
+
+/* 🌧️ RAIN */
+.rainy-bg {
+  background: linear-gradient(135deg, #4b79a1, #283e51);
+}
+
+/* 🌫️ MIST / HAZE */
+.mist-bg {
+  background: linear-gradient(135deg, #757f9a, #d7dde8);
+}
+
+/* 🌩️ THUNDER */
+.thunder-bg {
+  background: linear-gradient(135deg, #232526, #414345);
+}
+
+/* DEFAULT */
+.default-bg {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.card, .forecast-card {
+  transition: all 0.3s ease;
+}
+
+.sunny-bg .card,
+.sunny-bg .forecast-card {
+  box-shadow: 0 0 20px rgba(255, 200, 0, 0.5);
+}
+
+.rainy-bg .card,
+.rainy-bg .forecast-card {
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+}
+
+.cloudy-bg .card,
+.cloudy-bg .forecast-card {
+  box-shadow: 0 0 20px rgba(200, 200, 200, 0.3);
+}
