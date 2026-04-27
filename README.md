@@ -1,8 +1,7 @@
 🌤️ Weather App
 A modern weather application that shows real-time weather data, 5-day forecast, and auto-detects user location.
 
-🚀 Live Demo
-https://weatherdashboarde.netlify.app/
+🚀 https://weather2-app-lilac.vercel.app
 
 ✨ Features
 🌦️ Real-time weather data
